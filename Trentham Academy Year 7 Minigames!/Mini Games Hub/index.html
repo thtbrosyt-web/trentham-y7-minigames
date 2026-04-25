@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mini Games Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section id="intro-scene" class="scene active intro-scene">
+      <div class="intro-card">
+        <h1 id="intro-title" class="trace-title">THTLabs</h1>
+        <p id="intro-subtitle" class="trace-subtitle">By Matei</p>
+        <p id="intro-quote" class="typed-quote"></p>
+      </div>
+    </section>
+
+    <section id="menu-scene" class="scene">
+      <h2 class="screen-title">Mini Games Hub</h2>
+      <p class="screen-subtitle">Choose a game and have fun.</p>
+      <div class="menu-grid">
+        <button class="menu-btn" data-game="maths">Maths Quiz</button>
+        <button class="menu-btn" data-game="reaction">Tap Frenzy</button>
+        <button class="menu-btn" data-game="flag">Flag Quiz</button>
+        <button class="menu-btn" data-game="typing">Typing Game</button>
+      </div>
+    </section>
+
+    <section id="maths-scene" class="scene game-scene">
+      <div class="game-head">
+        <button class="back-btn" data-target="menu-scene">Back</button>
+        <h3>Maths Quiz</h3>
+      </div>
+      <p id="maths-question" class="question-text"></p>
+      <div id="maths-options" class="options-grid"></div>
+      <p id="maths-feedback" class="feedback"></p>
+      <button id="maths-next" class="action-btn">Next Question</button>
+    </section>
+
+    <section id="reaction-scene" class="scene game-scene">
+      <div class="game-head">
+        <button class="back-btn" data-target="menu-scene">Back</button>
+        <h3>Tap Frenzy</h3>
+      </div>
+      <p class="hint-text">Tap start, then tap the big button as many times as you can in 5 seconds.</p>
+      <button id="reaction-start" class="action-btn">Start Round</button>
+      <button id="reaction-area" class="reaction-area" disabled>Tap!</button>
+      <p id="reaction-result" class="feedback"></p>
+    </section>
+
+    <section id="flag-scene" class="scene game-scene">
+      <div class="game-head">
+        <button class="back-btn" data-target="menu-scene">Back</button>
+        <h3>Flag Quiz</h3>
+      </div>
+      <img id="flag-image" class="flag-image" src="" alt="Country flag">
+      <p id="flag-prompt" class="question-text">Which country is this?</p>
+      <div id="flag-options" class="options-grid"></div>
+      <p id="flag-feedback" class="feedback"></p>
+      <button id="flag-next" class="action-btn">Next Flag</button>
+    </section>
+
+    <section id="typing-scene" class="scene game-scene">
+      <div class="game-head">
+        <button class="back-btn" data-target="menu-scene">Back</button>
+        <h3>Typing Game</h3>
+      </div>
+      <p id="typing-word" class="typing-word"></p>
+      <input id="typing-input" class="typing-input" type="text" placeholder="Type the word here">
+      <button id="typing-start" class="action-btn">New Word</button>
+      <p id="typing-feedback" class="feedback"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
