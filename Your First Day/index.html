@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your First Day</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="intro-screen" class="screen active">
+    <div class="intro-inner">
+      <svg class="logo-svg" viewBox="0 0 1000 320" aria-hidden="true">
+        <text id="trace-main" x="50%" y="120" text-anchor="middle">THTLabs</text>
+        <text id="trace-sub" x="50%" y="205" text-anchor="middle">By Matei</text>
+      </svg>
+      <p id="intro-quote" class="intro-quote"></p>
+      <button id="start-button" class="btn btn-start" hidden>Start Your First Day</button>
+    </div>
+  </div>
+
+  <main id="game-screen" class="screen">
+    <section class="game-card">
+      <header class="hud">
+        <div class="name-box">
+          <span class="label">Character</span>
+          <h2 id="character-name">Narrator</h2>
+        </div>
+        <div class="confidence-box">
+          <span class="label">Confidence</span>
+          <div class="meter-track">
+            <div id="confidence-meter" class="meter-fill"></div>
+          </div>
+          <p id="confidence-value">50</p>
+        </div>
+      </header>
+
+      <article id="scene-text" class="text-box"></article>
+
+      <section id="choices" class="choices"></section>
+
+      <footer class="controls">
+        <button id="restart-button" class="btn btn-secondary">Restart</button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="scenes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
