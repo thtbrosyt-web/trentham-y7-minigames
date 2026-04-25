@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trentham Academy Fun Year 7 Minigames</title>
+  <style>
+    :root {
+      --yellow-main: #ffd400;
+      --yellow-soft: #ffeb6e;
+      --black: #121212;
+      --white: #ffffff;
+      --shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--black);
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.35), transparent 45%),
+        linear-gradient(135deg, var(--yellow-main), var(--yellow-soft));
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 40px;
+    }
+
+    .hub {
+      width: min(1100px, 100%);
+    }
+
+    .title {
+      margin: 8px 0 20px;
+      text-align: center;
+      font-size: clamp(1.6rem, 2.6vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      text-wrap: balance;
+      color: var(--black);
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .subtitle {
+      margin: 0 0 28px;
+      text-align: center;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: #2a2a2a;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .game-card {
+      background: var(--white);
+      border: 3px solid var(--black);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+      min-height: 265px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 520ms ease forwards;
+    }
+
+    .game-card:nth-child(2) { animation-delay: 90ms; }
+    .game-card:nth-child(3) { animation-delay: 180ms; }
+    .game-card:nth-child(4) { animation-delay: 270ms; }
+
+    .game-icon {
+      width: 100%;
+      min-height: 110px;
+      border-radius: 14px;
+      border: 2px dashed #464646;
+      background: linear-gradient(160deg, #fff9d1, #fff4a6);
+      display: grid;
+      place-items: center;
+      font-size: 2.2rem;
+    }
+
+    .game-name {
+      margin: 0;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      min-height: 2.6em;
+      display: grid;
+      place-items: center;
+    }
+
+    .play-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background: var(--black);
+      color: var(--yellow-main);
+      border: 2px solid var(--black);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      min-height: 54px;
+      padding: 12px 16px;
+      transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+      touch-action: manipulation;
+    }
+
+    .play-button:focus-visible {
+      outline: 3px solid #2a2a2a;
+      outline-offset: 2px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .game-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .play-button:hover {
+        background: #000000;
+        color: #fff176;
+        transform: translateY(-1px) scale(1.01);
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding-inline: 12px;
+      }
+
+      .game-card {
+        min-height: 245px;
+      }
+
+      .play-button {
+        min-height: 56px;
+      }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="hub">
+    <h1 class="title">Trentham Academy Fun Year 7 Minigames</h1>
+    <p class="subtitle">Pick a game and start playing!</p>
+
+    <section class="game-grid" aria-label="Game selection">
+      <article class="game-card">
+        <div class="game-icon" aria-hidden="true">🏫</div>
+        <h2 class="game-name">School Survival Day</h2>
+        <a class="play-button" href="./School%20Survival%20Day/index.html">Play Game</a>
+      </article>
+
+      <article class="game-card">
+        <div class="game-icon" aria-hidden="true">⚡</div>
+        <h2 class="game-name">School Reaction Trainer</h2>
+        <a class="play-button" href="./School%20Reaction%20Trainer/index.html">Play Game</a>
+      </article>
+
+      <article class="game-card">
+        <div class="game-icon" aria-hidden="true">🎒</div>
+        <h2 class="game-name">Pack Your Bag</h2>
+        <a class="play-button" href="./Pack%20Your%20Bag/index.html">Play Game</a>
+      </article>
+
+      <article class="game-card">
+        <div class="game-icon" aria-hidden="true">📖</div>
+        <h2 class="game-name">Your First Day</h2>
+        <a class="play-button" href="./Your%20First%20Day/index.html">Play Game</a>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
